@@ -18,8 +18,7 @@ $(call inherit-product, device/xiaomi/mi89xx-mainline/device.mk)
 PRODUCT_AAPT_PREF_CONFIG := xhdpi
 
 # Audio
-PRODUCT_PACKAGES += \
-    audio.tiare_mainline.xml
+TARGET_AUDIO_MAINLINE_UCM_PROFILES := xiaomi-tiare
 
 # Boot animation
 TARGET_SCREEN_HEIGHT := 1280

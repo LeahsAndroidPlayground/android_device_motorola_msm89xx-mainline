@@ -25,9 +25,7 @@ AB_OTA_POSTINSTALL_CONFIG += \
 PRODUCT_AAPT_PREF_CONFIG := xxhdpi
 
 # Audio
-PRODUCT_PACKAGES += \
-    audio.tissot_mainline.xml \
-    audio.xiaomi-daisy.xml
+TARGET_AUDIO_MAINLINE_UCM_PROFILES := xiaomi-tissot
 
 # Bluetooth
 PRODUCT_VENDOR_PROPERTIES += bluetooth.le.disable_apcf_extended_features=0

@@ -19,12 +19,15 @@ $(call inherit-product, device/xiaomi/mi89xx-mainline/device.mk)
 PRODUCT_AAPT_PREF_CONFIG := xxhdpi
 
 # Audio
-PRODUCT_PACKAGES += \
-    audio.mi8953_a.xml \
-    audio.xiaomi-daisy.xml \
-    audio.xiaomi-mido.xml \
-    audio.xiaomi-onclite.xml \
-    audio.xiaomi-vince.xml
+TARGET_AUDIO_MAINLINE_UCM_PROFILES := \
+    xiaomi-daisy \
+    xiaomi-markw \
+    xiaomi-mido \
+    xiaomi-onclite \
+    xiaomi-rosy \
+    xiaomi-tissot \
+    xiaomi-vince \
+    xiaomi-ysl
 
 # Boot animation
 TARGET_SCREEN_HEIGHT := 1920

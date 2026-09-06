@@ -18,8 +18,7 @@ $(call inherit-product, device/xiaomi/mi89xx-mainline/device.mk)
 PRODUCT_AAPT_PREF_CONFIG := xhdpi
 
 # Audio
-PRODUCT_COPY_FILES += \
-    $(call find-copy-subdir-files,*.xml,$(TARGET_DEVICE_PATH)/audio/,$(TARGET_COPY_OUT_VENDOR)/etc/)
+TARGET_AUDIO_MAINLINE_UCM_PROFILES := wt88047
 
 # Boot animation
 TARGET_BOOTANIMATION_HALF_RES := true
