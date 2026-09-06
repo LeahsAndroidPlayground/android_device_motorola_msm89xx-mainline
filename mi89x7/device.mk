@@ -65,6 +65,10 @@ DEVICE_PACKAGE_OVERLAYS += \
 PRODUCT_PACKAGES += \
     AodDefaultOnOverlay
 
+# Properties
+PRODUCT_VENDOR_PROPERTIES += \
+    vendor.remoteproc.4080000_remoteproc.ignore=1
+
 # Soong namespaces
 PRODUCT_SOONG_NAMESPACES += \
     $(TARGET_DEVICE_PATH) \
