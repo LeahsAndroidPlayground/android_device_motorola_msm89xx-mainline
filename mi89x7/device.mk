@@ -9,7 +9,6 @@ TARGET_DEVICE_PATH := device/xiaomi/mi89xx-mainline/mi89x7
 TARGET_HAS_IR := true
 TARGET_QCOM_SOC_FAMILY := msm8937
 ## TODO: Bringup the corresponding hardware and remove the following definitions
-TARGET_LIGHT_HAL := none
 TARGET_SUPPORTS_SUSPEND := false
 include device/mainline/qcom-common/optional/options.mk
 
@@ -67,6 +66,7 @@ PRODUCT_PACKAGES += \
 
 # Properties
 PRODUCT_VENDOR_PROPERTIES += \
+    vendor.hwc.drm.enable_backlight_control=0 \
     vendor.remoteproc.4080000_remoteproc.ignore=1
 
 # Soong namespaces
