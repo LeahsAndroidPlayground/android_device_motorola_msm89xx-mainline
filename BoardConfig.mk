@@ -54,7 +54,3 @@ BOARD_RAMDISK_USE_LZ4 := true
 # SELinux
 BOARD_ODM_SEPOLICY_DIRS += \
     $(DEVICE_PATH)/sepolicy/odm
-
-# VINTF
-DEVICE_MANIFEST_FILE := \
-    $(DEVICE_PATH)/vintf/manifest.xml
