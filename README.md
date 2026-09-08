@@ -5,10 +5,16 @@
 |                   Target                  |               Path               |                     URL                     |         Branch         |
 |-------------------------------------------|----------------------------------|---------------------------------------------|------------------------|
 | mi8916                                    | kernel/mainline/msm8916-mainline | https://github.com/msm8916-mainline/linux   | wip/msm8916/6.19       |
-| mi8953_a, daisy_mainline, tissot_mainline | kernel/mainline/msm8953-mainline | https://github.com/msm8953-mainline/linux   | barni2000/6.19/develop |
-| mi8956                                    | kernel/mainline/msm8956-mainline | https://codeberg.org/msm8956-mainline/linux | msm8956/7.0            |
+| mi8953_a, daisy_mainline, tissot_mainline | kernel/mainline/msm8953-mainline | https://github.com/msm8953-mainline/linux   | 7.1.3/main             |
+| mi8956                                    | kernel/mainline/msm8956-mainline | https://codeberg.org/msm8956-mainline/linux | msm8956/7.2.3          |
 | mi8998                                    | kernel/mainline/msm8998-mainline | https://github.com/msm8998-mainline/linux   | qcom-msm8998-6.1.y     |
-| mi439_mainline, mi89x7, tiare_mainline    | kernel/mainline/msm89x7-mainline | https://github.com/msm89x7-mainline/linux   | msm89x7/6.19-develop   |
+| mi439_mainline, mi89x7, tiare_mainline    | kernel/mainline/msm89x7-mainline | https://github.com/msm89x7-mainline/linux   | msm89x7/7.1.3          |
+
+## Android platform patches
+
+| Commit name | Purpose | Source |
+|-------------|---------|--------|
+| `jniClatCoordinator: Do not crash on BPF SELinux context mismatch` | Fixes booting on v7.2+ kernels | https://review.lineageos.org/c/LineageOS/android_packages_modules_Connectivity/+/494663 |
 
 ## Kernel edits
 
