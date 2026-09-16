@@ -9,7 +9,6 @@ TARGET_DEVICE_PATH := device/xiaomi/mi89xx-mainline/daisy_mainline
 AB_OTA_UPDATER := true
 TARGET_HAS_IR := true
 TARGET_QCOM_SOC := msm8953
-TARGET_SENSORS_HAL := iio
 ## TODO: Bringup the corresponding hardware and remove the following definitions
 TARGET_SUPPORTS_SUSPEND := false
 include device/mainline/qcom-common/optional/options.mk
