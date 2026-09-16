@@ -11,9 +11,6 @@ $(call inherit-product, device/xiaomi/mi89xx-mainline/device.mk)
 # AAPT
 PRODUCT_AAPT_PREF_CONFIG := xxhdpi
 
-# Audio
-TARGET_AUDIO_HAL := default-aidl # temporary
-
 # Boot animation
 TARGET_SCREEN_HEIGHT := 1920
 TARGET_SCREEN_WIDTH := 1080
