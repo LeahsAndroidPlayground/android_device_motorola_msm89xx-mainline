@@ -5,28 +5,30 @@
 
 TARGET_DEVICE_PATH := device/xiaomi/mi89xx-mainline/mi439_mainline
 
-# Inherit options from mainline/qcom-common
-TARGET_HAS_IR := true
-TARGET_QCOM_SOC := sdm439
-## TODO: Bringup the corresponding hardware and remove the following definitions
-TARGET_AUDIO_HAL := default-aidl
-TARGET_HEALTH_HAL := cuttlefish
-TARGET_SUPPORTS_SUSPEND := false
-TARGET_USES_FRAMEBUFFER_DISPLAY := true
-include device/mainline/qcom-common/optional/options.mk
-
 # Inherit from parent
 $(call inherit-product, device/xiaomi/mi89xx-mainline/device.mk)
 
 # AAPT
 PRODUCT_AAPT_PREF_CONFIG := xhdpi
 
+# Audio
+TARGET_AUDIO_HAL := default-aidl # temporary
+
 # Boot animation
 TARGET_SCREEN_HEIGHT := 1440
 TARGET_SCREEN_WIDTH := 720
 
+# ConsumerIR
+TARGET_HAS_IR := true
+
 # Dalvik heap
 $(call inherit-product, frameworks/native/build/phone-xhdpi-2048-dalvik-heap.mk)
+
+# Display
+TARGET_USES_FRAMEBUFFER_DISPLAY := true # temporary
+
+# Health
+TARGET_HEALTH_HAL := cuttlefish # temporary
 
 # Init
 PRODUCT_PACKAGES += \
@@ -44,6 +46,9 @@ $(call soong_config_set,mainline_common_libinit,set_properties_from,devicetree)
 # Kernel
 PRODUCT_PACKAGES += \
     modules.load.normal
+
+# SoC
+TARGET_QCOM_SOC := sdm439
 
 # Soong namespaces
 PRODUCT_SOONG_NAMESPACES += \

@@ -5,13 +5,6 @@
 
 TARGET_DEVICE_PATH := device/xiaomi/mi89xx-mainline/mi8953_a
 
-# Inherit options from mainline/qcom-common
-TARGET_HAS_IR := true
-TARGET_QCOM_SOC_FAMILY := msm8953
-## TODO: Bringup the corresponding hardware and remove the following definitions
-TARGET_SUPPORTS_SUSPEND := false
-include device/mainline/qcom-common/optional/options.mk
-
 # Inherit from parent
 $(call inherit-product, device/xiaomi/mi89xx-mainline/device.mk)
 
@@ -32,6 +25,9 @@ TARGET_AUDIO_MAINLINE_UCM_PROFILES := \
 # Boot animation
 TARGET_SCREEN_HEIGHT := 1920
 TARGET_SCREEN_WIDTH := 1080
+
+# ConsumerIR
+TARGET_HAS_IR := true
 
 # Dalvik heap
 $(call inherit-product, frameworks/native/build/phone-xhdpi-2048-dalvik-heap.mk)
@@ -85,6 +81,9 @@ DEVICE_PACKAGE_OVERLAYS += \
 # Properties
 PRODUCT_VENDOR_PROPERTIES += \
     vendor.remoteproc.4080000_remoteproc.ignore=1
+
+# SoC
+TARGET_QCOM_SOC_FAMILY := msm8953
 
 # Soong namespaces
 PRODUCT_SOONG_NAMESPACES += \

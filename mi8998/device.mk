@@ -5,20 +5,14 @@
 
 TARGET_DEVICE_PATH := device/xiaomi/mi89xx-mainline/mi8998
 
-# Inherit options from mainline/qcom-common
-TARGET_QCOM_SOC := msm8998
-## TODO: Bringup the corresponding hardware and remove the following definitions
-TARGET_AUDIO_HAL := default-aidl
-TARGET_HAS_BATTERY := false
-TARGET_SUPPORTS_SUSPEND := false
-TARGET_USES_FRAMEBUFFER_DISPLAY := true
-include device/mainline/qcom-common/optional/options.mk
-
 # Inherit from parent
 $(call inherit-product, device/xiaomi/mi89xx-mainline/device.mk)
 
 # AAPT
 PRODUCT_AAPT_PREF_CONFIG := xxhdpi
+
+# Audio
+TARGET_AUDIO_HAL := default-aidl # temporary
 
 # Boot animation
 TARGET_SCREEN_HEIGHT := 1920
@@ -26,6 +20,12 @@ TARGET_SCREEN_WIDTH := 1080
 
 # Dalvik heap
 $(call inherit-product, frameworks/native/build/phone-xhdpi-4096-dalvik-heap.mk)
+
+# Disable
+TARGET_HAS_BATTERY := false # temporary
+
+# Display
+TARGET_USES_FRAMEBUFFER_DISPLAY := true # temporary
 
 # Firmware
 PRODUCT_COPY_FILES += \
@@ -51,6 +51,9 @@ $(call soong_config_set,mainline_common_libinit,set_properties_from,devicetree)
 # Overlay
 DEVICE_PACKAGE_OVERLAYS += \
     $(TARGET_DEVICE_PATH)/overlays/overlay
+
+# SoC
+TARGET_QCOM_SOC := msm8998
 
 # Soong namespaces
 PRODUCT_SOONG_NAMESPACES += \

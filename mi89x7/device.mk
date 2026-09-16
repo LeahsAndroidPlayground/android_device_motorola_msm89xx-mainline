@@ -5,13 +5,6 @@
 
 TARGET_DEVICE_PATH := device/xiaomi/mi89xx-mainline/mi89x7
 
-# Inherit options from mainline/qcom-common
-TARGET_HAS_IR := true
-TARGET_QCOM_SOC_FAMILY := msm8937
-## TODO: Bringup the corresponding hardware and remove the following definitions
-TARGET_SUPPORTS_SUSPEND := false
-include device/mainline/qcom-common/optional/options.mk
-
 # Inherit from parent
 $(call inherit-product, device/xiaomi/mi89xx-mainline/device.mk)
 
@@ -30,6 +23,9 @@ TARGET_AUDIO_MAINLINE_UCM_PROFILES := \
 # Boot animation
 TARGET_SCREEN_HEIGHT := 1280
 TARGET_SCREEN_WIDTH := 720
+
+# ConsumerIR
+TARGET_HAS_IR := true
 
 # Dalvik heap
 $(call inherit-product, frameworks/native/build/phone-xhdpi-2048-dalvik-heap.mk)
@@ -70,6 +66,9 @@ PRODUCT_PACKAGES += \
 PRODUCT_VENDOR_PROPERTIES += \
     vendor.hwc.drm.enable_backlight_control=0 \
     vendor.remoteproc.4080000_remoteproc.ignore=1
+
+# SoC
+TARGET_QCOM_SOC_FAMILY := msm8937
 
 # Soong namespaces
 PRODUCT_SOONG_NAMESPACES += \

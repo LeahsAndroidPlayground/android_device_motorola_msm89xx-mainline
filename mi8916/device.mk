@@ -5,12 +5,6 @@
 
 TARGET_DEVICE_PATH := device/xiaomi/mi89xx-mainline/mi8916
 
-# Inherit options from mainline/qcom-common
-TARGET_QCOM_SOC_FAMILY := msm8916
-## TODO: Bringup the corresponding hardware and remove the following definitions
-TARGET_SUPPORTS_SUSPEND := false
-include device/mainline/qcom-common/optional/options.mk
-
 # Inherit from parent
 $(call inherit-product, device/xiaomi/mi89xx-mainline/device.mk)
 
@@ -57,6 +51,9 @@ DEVICE_PACKAGE_OVERLAYS += \
 
 # Partitions
 PRODUCT_USE_DYNAMIC_PARTITION_SIZE := true
+
+# SoC
+TARGET_QCOM_SOC_FAMILY := msm8916
 
 # Soong namespaces
 PRODUCT_SOONG_NAMESPACES += \

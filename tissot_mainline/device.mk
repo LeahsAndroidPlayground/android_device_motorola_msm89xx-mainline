@@ -5,20 +5,14 @@
 
 TARGET_DEVICE_PATH := device/xiaomi/mi89xx-mainline/tissot_mainline
 
-# Inherit options from mainline/qcom-common
-AB_OTA_UPDATER := true
-TARGET_HAS_IR := true
-TARGET_QCOM_SOC := msm8953
-## TODO: Bringup the corresponding hardware and remove the following definitions
-TARGET_SUPPORTS_SUSPEND := false
-include device/mainline/qcom-common/optional/options.mk
-
 # Inherit from parent
 $(call inherit-product, device/xiaomi/mi89xx-mainline/device.mk)
 
 # A/B
 AB_OTA_POSTINSTALL_CONFIG += \
     FILESYSTEM_TYPE_system=ext4
+
+AB_OTA_UPDATER := true
 
 # AAPT
 PRODUCT_AAPT_PREF_CONFIG := xxhdpi
@@ -32,6 +26,9 @@ PRODUCT_VENDOR_PROPERTIES += bluetooth.le.disable_apcf_extended_features=0
 # Boot animation
 TARGET_SCREEN_HEIGHT := 1920
 TARGET_SCREEN_WIDTH := 1080
+
+# ConsumerIR
+TARGET_HAS_IR := true
 
 # Dalvik heap
 $(call inherit-product, frameworks/native/build/phone-xhdpi-4096-dalvik-heap.mk)
@@ -77,6 +74,9 @@ DEVICE_PACKAGE_OVERLAYS += \
 # Properties
 PRODUCT_VENDOR_PROPERTIES += \
     vendor.remoteproc.4080000_remoteproc.ignore=1
+
+# SoC
+TARGET_QCOM_SOC := msm8953
 
 # Soong namespaces
 PRODUCT_SOONG_NAMESPACES += \

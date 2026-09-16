@@ -27,6 +27,9 @@ endif
 # Bootanimation
 TARGET_BOOTANIMATION_HALF_RES := true
 
+# Disable
+TARGET_SUPPORTS_SUSPEND ?= false
+
 # HIDL
 PRODUCT_PACKAGES += \
     vndservicemanager
